@@ -37,7 +37,7 @@ except (json.decoder.JSONDecodeError, ValueError):
 # create a date dict with 5 days ahead and populate it with data from ODRE json
 days_d = {}
 today_dt = dt.now(tz=pytz.timezone('Europe/Paris')).date()
-for d_offset in range(5):
+for d_offset in range(6):
     day_date = today_dt + timedelta(days=d_offset)
     days_d[day_date] = odre_js_d.get(day_date, 0)
 

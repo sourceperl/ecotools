@@ -10,6 +10,7 @@ import sys
 import json
 from urllib.error import URLError
 from urllib.request import urlopen
+# sudo apt install python3-dateutil python3-tz
 from dateutil.parser import parse as dt_parse
 import pytz
 

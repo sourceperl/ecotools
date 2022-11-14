@@ -20,6 +20,7 @@ from private_data import RTE_CLIENT_ID, RTE_SECRET_ID
 # some const
 AUTH_SRV_URL = 'https://digital.iservices.rte-france.com/token/oauth/'
 RES_SRV_URL = 'https://digital.iservices.rte-france.com/open_api/ecowatt/v4/signals'
+DEV_RES_SRV_URL = 'https://digital.iservices.rte-france.com/open_api/ecowatt/v4/sandbox/signals'
 
 # HTTP request
 try:
@@ -38,7 +39,7 @@ try:
     data_d = json.loads(http_resp.read())
     pprint(data_d)
 except URLError as e:
-    print(f'error: {e!r}', file=sys.stderr)
+    print(f'network error: {e!r}', file=sys.stderr)
     exit(1)
 except (json.decoder.JSONDecodeError, KeyError) as e:
     print(f'wrong data format: {e!r}', file=sys.stderr)
